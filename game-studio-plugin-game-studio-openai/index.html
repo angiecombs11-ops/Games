@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StarBlock Academy</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <main id="game-shell">
+        <section id="game-wrap" aria-label="StarBlock Academy playfield"></section>
+        <aside id="hud" aria-label="Mission controls">
+          <div class="brand-lockup">
+            <div class="ship-badge" aria-hidden="true"></div>
+            <div>
+              <h1>StarBlock Academy</h1>
+              <p>Repair the Galaxy Library one block at a time.</p>
+            </div>
+          </div>
+
+          <div class="mission-panel">
+            <div class="panel-head">
+              <span id="world-name">Counting Comet Field</span>
+              <strong id="grade-name">Preschool</strong>
+            </div>
+            <h2 id="mission-title">Loading mission...</h2>
+            <p id="story-context"></p>
+            <p id="mission-goal"></p>
+            <div class="progress-track" aria-label="Mission progress">
+              <span id="progress-bar"></span>
+            </div>
+            <p id="coach-line" aria-live="polite">Drag glowing blocks with the tow beam.</p>
+          </div>
+
+          <div class="level-panel">
+            <div>
+              <span id="level-name">Kindergarten Galaxy</span>
+              <strong id="level-progress">0/6 pages</strong>
+            </div>
+            <button id="practice-set-button" type="button" hidden>More Practice</button>
+            <button id="next-level-button" type="button" hidden>Next Level</button>
+          </div>
+
+          <div class="planet-grid" role="group" aria-label="Choose a planet mission"></div>
+
+          <div class="ship-tools">
+            <button id="hint-button" type="button">Hint</button>
+            <button id="reset-button" type="button">Reset</button>
+            <label class="toggle-row">
+              <input id="read-aloud" type="checkbox" />
+              <span>Read aloud</span>
+            </label>
+            <label class="toggle-row">
+              <input id="friendly-font" type="checkbox" />
+              <span>Dyslexia-friendly</span>
+            </label>
+          </div>
+
+          <div class="reward-strip" aria-label="Collected rewards">
+            <span>Constellation repair</span>
+            <div id="stickers"></div>
+          </div>
+        </aside>
+      </main>
+      <section id="celebration" class="celebration hidden tier-grade-set" aria-live="polite" aria-modal="true" role="dialog">
+        <div class="celebration-card">
+          <div id="celebration-burst" class="celebration-burst" aria-hidden="true"></div>
+          <span id="celebration-kicker">Galaxy Library repaired</span>
+          <h2 id="celebration-title">Set complete!</h2>
+          <p id="celebration-message">You repaired a full set of pages.</p>
+          <div id="celebration-stars" class="celebration-stars" aria-hidden="true"></div>
+          <button id="celebration-close" type="button">Keep Flying</button>
+        </div>
+      </section>
+    </div>
+    <script defer src="./phaser.min.js"></script>
+    <script defer src="./src/main.js"></script>
+  </body>
+</html>
